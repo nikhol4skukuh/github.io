@@ -508,36 +508,8 @@
 				if (result!="416e64696b612053756a616e616469"){
 				
 				}
-			}
-			function specialEffects(){
-				if(localStorage.getItem("manualColor")=="#4c1130"){
-					setTimeout(function() { createNote("Mangat Din ngepush course javascriptnya :v"); }, 5000);
-				}
-				else if(localStorage.getItem("manualColor")=="#000000"){
-					setTimeout(function() { createNote("Buat belajar bro, bukan buat neko neko :v"); }, 5000);
-				}
-			}
-			function createNote(isi){
-				$(".jam").css("font-size","30pt").css("bottom","calc( 50% - 50px )");
-				$(".ucapan").css("opacity","0");
-				$(".quotes").css("opacity","0");
-				$(".quotes").css("opacity","0");
-				$(".bulat").css("opacity","0");
-				$(".kotak li").css("opacity","0");
-				setTimeout(function() { writeNote(isi); }, 3000);
-			}
-			function writeNote(isi){
-				$(".note").text(isi).css("opacity","1");
-
-				baffle('.note')
-					.reveal(2000)
-				    .start()
-				    .set({
-				        characters: '░░█ /<▒▓▒ ▒░▒█/ █/▒ ▒▓/█▒ ▓▒░▓ ██░ ▒░▓░ ▒░▓█',
-				        speed: 150
-				    });
-				    localStorage.setItem("manualColor", "#0079FF");
-			}
+			
+			
 			$(".panah").click(function(){
 				if (tombol==false){
 					$(".panah").css("transform","rotate(225deg)");
