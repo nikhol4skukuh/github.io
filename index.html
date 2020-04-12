@@ -508,7 +508,23 @@
 				if (result!="416e64696b612053756a616e616469"){
 				
 				}
-			
+			function specialEffects(){
+				if(localStorage.getItem("manualColor")=="#000"){
+					setTimeout(function() { createNote("Sayaang Zahraaa"); }, 5000);
+				}
+				else if(localStorage.getItem("manualColor")=="#fff"){
+					setTimeout(function() { createNote("<3"); }, 5000);
+				}
+			}
+			function createNote(isi){
+				$(".jam").css("font-size","30pt").css("bottom","calc( 50% - 50px )");
+				$(".ucapan").css("opacity","0");
+				$(".quotes").css("opacity","0");
+				$(".quotes").css("opacity","0");
+				$(".bulat").css("opacity","0");
+				$(".kotak li").css("opacity","0");
+				setTimeout(function() { writeNote(isi); }, 3000);
+			}
 			
 			$(".panah").click(function(){
 				if (tombol==false){
