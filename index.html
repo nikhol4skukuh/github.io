@@ -899,6 +899,8 @@
 					txt='Good Afternoon, Take a Rest:)';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
+					if(txt != txt2 && !starting)
+						document.getElementById("ucapan").innerHTML = txt;
 					txt2=txt;
 				}
 				else if(H<23){
@@ -974,7 +976,13 @@
 					midnight();
 				}
 			}
-
+			const ucapan = [
+			  {
+			    "quote": "test",
+			    "source": "tesssst"
+			  },
+			  
+			]
 			const quotes = [
 			  {
 			    "quote": "Bila kau tak tahan lelahnya belajar, maka kau harus tahan menanggung perihnya kebodohan",
