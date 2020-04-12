@@ -860,19 +860,16 @@
 			var H;
 			var M;
 			var S;
-			var D;
 			var starting=true;
 			function startTime() {
 				var today = new Date();
 				var h = today.getHours();
 				var m = today.getMinutes();
 				var s = today.getSeconds();
-				var d = today.getDate();
 
 				H=h;
 				M=m;
 				S=s;
-				D=d;
 
 				if (H<5){
 					txt='Have a Good Night:)';
@@ -892,13 +889,18 @@
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
-				else if(H=17){
-					txt='Happy Birthday';
+				else if(H<16){
+					txt='Good Afternoon Dear:)';
 					if(txt != txt2 && !starting)
 						document.getElementById("quote").innerHTML = txt;
 					txt2=txt;
 				}
-				
+				else if(H<19){
+					txt='Good Afternoon, Take a Rest:)';
+					if(txt != txt2 && !starting)
+						document.getElementById("quote").innerHTML = txt;
+					txt2=txt;
+				}
 				else if(H<23){
 					txt='Good Evening Sweetie:)';
 					if(txt != txt2 && !starting)
