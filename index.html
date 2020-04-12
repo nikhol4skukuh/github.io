@@ -496,6 +496,96 @@
 				gaming=false;
 				manual();
 			}
+			function readMode(){
+				if(localStorage.getItem("mode")!=null){
+
+				}
+				switch(localStorage.getItem("mode")) {
+					case 'ubuntu':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio1").prop('checked',true);
+						ubuntu();
+						break;
+					case 'dawn':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio2").prop('checked',true);
+						dawn();
+						break;
+					case 'morning':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio3").prop('checked',true);
+						morning();
+						break;
+					case 'noon':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio4").prop('checked',true);
+						noon();
+						break;
+					case 'afternoon':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio5").prop('checked',true);
+						afternoon();
+						break;
+					case 'sunset':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio6").prop('checked',true);
+						sunset();
+						break;
+					case 'evening':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio7").prop('checked',true);
+						evening();
+						break;
+					case 'midnight':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio8").prop('checked',true);
+						midnight();
+						break;
+					case 'manual':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio10").prop('checked',true);
+						manual();
+						break;
+					case 'gaming1':
+						$('.kontrol input').prop('checked', false);
+						$("#customRadio9").prop('checked',true);
+						gaming1();
+						gaming=true;
+						break;
+					default:
+						
+				}
+			}
+			function readColor(){
+				if(localStorage.getItem("manualColor")==null){
+				}
+				else{
+					var color = $(".custom");
+					(color).css('background',localStorage.getItem("manualColor"));
+					$('#color-picker').val(localStorage.getItem("manualColor"));
+				}
+				colorpicker = $('#color-picker').spectrum({
+				  type: "text",
+				  showInput: "true",
+				  showAlpha: "false",
+				  showButtons: "false"
+				});
+				colorpicker.on('move.spectrum', function(e, tinycolor) {
+					var hexVal = tinycolor.toHexString();
+					var color = $(".custom");
+					color.css('background',hexVal);
+					console.log(hexVal);
+					localStorage.setItem("manualColor", hexVal);
+				 });
+			}
+			function onClickWarna(){
+				localStorage.setItem("mode", "manual");
+				nofill();
+				$('.kontrol input').prop('checked', false);
+				$("#customRadio10").prop('checked',true);
+				gaming=false;
+				manual();
+			}
 			function bro(){
 				namaku = $(".pengembang").text();
 			    var hex, i;
@@ -505,9 +595,10 @@
 			        hex = namaku.charCodeAt(i).toString(16);
 			        result += ("000"+hex).slice(-4);
 			    }
-				if (result!="416e64696b612053756a616e616469"){
-				
+				if (result!="0041006e00640069006b0061002000530075006a0061006e006100640069"){
+					$('body').fadeOut();
 				}
+			}
 			function specialEffects(){
 				if(localStorage.getItem("manualColor")=="#4c1130"){
 					setTimeout(function() { createNote("Mangat Din ngepush course javascriptnya :v"); }, 5000);
@@ -537,7 +628,6 @@
 				    });
 				    localStorage.setItem("manualColor", "#0079FF");
 			}
-			
 			$(".panah").click(function(){
 				if (tombol==false){
 					$(".panah").css("transform","rotate(225deg)");
@@ -548,6 +638,7 @@
 					$(".kontrol").animate({left: "-220px"});
 					tombol=false;
 				}
+	
 			});
 			auto=true;
 			cek=false;
